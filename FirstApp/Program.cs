@@ -6,7 +6,7 @@ namespace FirstApp
 	{
 		static void Main(string[] args)
 		{
-			consoleMessage();
+			ConsoleMessage();
 
             Console.WriteLine("Number 1: ");
             int n1 = int.Parse(Console.ReadLine());
@@ -14,17 +14,20 @@ namespace FirstApp
 			Console.WriteLine("Number 2: ");
 			int n2 = int.Parse(Console.ReadLine());
 
-			sum(n1, n2);
+            Console.WriteLine(Sum(n1, n2));
 		}
 
-		static void consoleMessage()
+		static void ConsoleMessage()
 		{
 			Console.WriteLine("Hello from consoleMessage");
 		}
 
-		static void sum(int a, int b)
-		{
-            Console.WriteLine($"Sum: {a + b}");
-        }
+
+		//static int Sum(int a, int b)
+		//{
+		//          return a + b;
+		//      }
+
+		static int Sum(int a, int b) => a + b; // Returns an integer
 	}
 }
