@@ -7,13 +7,17 @@ namespace FirstApp
 		static void Main(string[] args)
 		{
             Console.WriteLine(Sum(7, 5));
-        }
+		}
 
-		// Method Overloading
-		static int Sum(int a, int b) => a + b;
+		// Optional parameters
+		static double Sum(int a, double b, double c=0)
+		{
+			return a + b + c;
+		}
 
-		static double Sum(int a, double b) => a + b;
-
-		static int Sum(int n1, int n2, int n3) => n1 + n2 + n3;
+		static double Sum(int a, double b)
+		{
+			return a + b;
+		}
 	}
 }
