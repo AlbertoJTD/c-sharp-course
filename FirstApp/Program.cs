@@ -4,44 +4,16 @@ namespace FirstApp
 {
 	class Program
 	{
-		// class fields
-		int num1 = 5;
-		int num2 = 7;
-
 		static void Main(string[] args)
 		{
-			ConsoleMessage();
-
-            Console.WriteLine("Number 1: ");
-            int n1 = int.Parse(Console.ReadLine());
-
-			Console.WriteLine("Number 2: ");
-			int n2 = int.Parse(Console.ReadLine());
-
-            Console.WriteLine(Sum(n1, n2));
-		}
-
-		void FirstMethod()
-		{
-            Console.WriteLine(num1 + num2);
+            Console.WriteLine(Sum(7, 5));
         }
 
-		void SecondMethod()
-		{
-			Console.WriteLine(num1 + num2);
-		}
+		// Method Overloading
+		static int Sum(int a, int b) => a + b;
 
-		static void ConsoleMessage()
-		{
-			Console.WriteLine("Hello from consoleMessage");
-		}
+		static double Sum(int a, double b) => a + b;
 
-
-		//static int Sum(int a, int b)
-		//{
-		//          return a + b;
-		//      }
-
-		static int Sum(int a, int b) => a + b; // Returns an integer
+		static int Sum(int n1, int n2, int n3) => n1 + n2 + n3;
 	}
 }
