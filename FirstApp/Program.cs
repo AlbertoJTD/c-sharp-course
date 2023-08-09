@@ -6,23 +6,13 @@ namespace FirstApp
 	{
 		static void Main(string[] args)
 		{
-			//Console.WriteLine("Hello world");
+            Console.WriteLine("First number: ");
+			int n1 = int.Parse(Console.ReadLine());
 
-			int age = 20;
-			Console.WriteLine("Your age is " + age);
-			Console.WriteLine($"Your age is {age}");
+            Console.WriteLine("Second number: ");
+			int n2 = int.Parse(Console.ReadLine());
 
-			Console.WriteLine($"Your age is {age++}");
-			Console.WriteLine($"Your age is {++age}");
-
-			// Intialize values
-			int person1, person2, person3, person4;
-			person1 = person2 = person3 = person4 = 30;
-
-			// Convert from double to int
-			double temperature = 34.5;
-			int temperatureMexico = (int)temperature;
-			Console.WriteLine(temperatureMexico);
+            Console.WriteLine($"Sum: {n1 + n2}");
         }
 	}
 }
