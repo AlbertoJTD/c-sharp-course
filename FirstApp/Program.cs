@@ -4,6 +4,10 @@ namespace FirstApp
 {
 	class Program
 	{
+		// class fields
+		int num1 = 5;
+		int num2 = 7;
+
 		static void Main(string[] args)
 		{
 			ConsoleMessage();
@@ -15,6 +19,16 @@ namespace FirstApp
 			int n2 = int.Parse(Console.ReadLine());
 
             Console.WriteLine(Sum(n1, n2));
+		}
+
+		void FirstMethod()
+		{
+            Console.WriteLine(num1 + num2);
+        }
+
+		void SecondMethod()
+		{
+			Console.WriteLine(num1 + num2);
 		}
 
 		static void ConsoleMessage()
