@@ -7,45 +7,43 @@ namespace FirstApp
 	{
 		static void Main(string[] args)
 		{
-			//Circle circle = new Circle(); // New Circle object type
+			Car car = new Car(); // Create a new object using the constructor
+            Console.WriteLine(car.getInfoCar());
 
-			//double result = circle.CalculateArea(5);
-   //         Console.WriteLine(result);
-
-
-			ConvertEuroToDollar convertMoney = new ConvertEuroToDollar();
-			//convertMoney.euro = 1.45;
-			convertMoney.ModifyEuroValue(1.45);
-			Console.WriteLine(convertMoney.Convert(50));
-        }
+			Car car2 = new Car(3000, 1400); // Create a new object using the constructor
+			Console.WriteLine(car2.getInfoCar());
+		}
 	}
 
-	class Circle
+	class Car
 	{
-		private const double PI = 3.1416; // Property of Circle class
-
-		public double CalculateArea(int radio) // Method class
+		// Constructor
+		// Constructor Overloading
+		public Car() // Provide an initial state for all created objects
 		{
-			return PI * Math.Pow(radio, 2);
+			wheels = 4;
+			height = 2300.5;
+			width = 1200;
+		}
+
+		public Car(double height, double width)
+		{
+			this.wheels = 4;
+			this.height = height;
+			this.width = width;
+		}
+
+		// Properties
+		private int wheels;
+		private double height;
+		private double width;
+		private bool airConditioner;
+		private string color;
+
+		// Getter -> Get info
+		public string getInfoCar()
+		{
+			return $"--- Info car ---\nWheels: 4\nHeight: {height}\nWidth: {width}";
 		}
     }
-
-	class ConvertEuroToDollar
-	{
-		public double euro = 0.9108;
-
-		public double Convert(double amount)
-		{
-			return amount * euro;
-		}
-
-		// Accessors
-		public void ModifyEuroValue(double newValue)
-		{
-			if (newValue > 0)
-			{
-				euro = newValue;
-			}
-		}
-	}
 }
