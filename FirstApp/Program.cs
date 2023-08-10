@@ -7,29 +7,12 @@ namespace FirstApp
 	{
 		static void Main(string[] args)
 		{
-            Console.WriteLine("Type a number: ");
-			bool isANumber = false;
-
-			do
+			checked // Verify if there is an error
 			{
-				try
-				{
-					int num = int.Parse(Console.ReadLine());
-					isANumber = true;
-				}
-				//catch (FormatException e)
-				//{
-    //                Console.WriteLine("You have entered text");
-    //            }
-				catch (Exception e) when (e.GetType() != typeof(FormatException)) // general exception excluding FormatException
-				{
-                    Console.WriteLine(e.Message);
-                }
-				catch (FormatException e)
-				{
-					Console.WriteLine("You have entered text");
-				}
-			} while (!isANumber);
+				int num = int.MaxValue; // Gets the maximun value of an int type
+				int result = num + 30; // It should be out of int range
+				Console.WriteLine(result);
+			}
 		}
 	}
 }
