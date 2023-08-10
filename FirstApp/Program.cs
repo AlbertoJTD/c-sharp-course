@@ -16,18 +16,18 @@ namespace FirstApp
 
             while (!guessed)
             {
-                Console.WriteLine("Type the number: ");
+				attemps++;
+
+				Console.WriteLine("Type the number: ");
 				int userValue = int.Parse(Console.ReadLine());
 
 				if (userValue > randomNumber)
 				{
                     Console.WriteLine("The typed value is greather than the generated number\n");
-					attemps++;
 				}
 				else if (userValue < randomNumber)
 				{
 					Console.WriteLine("The typed value is less than the generated number\n");
-					attemps++;
 				}
 				else
 				{
