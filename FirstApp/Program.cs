@@ -7,27 +7,17 @@ namespace FirstApp
 	{
 		static void Main(string[] args)
 		{
-            Console.WriteLine("Choose transportation (car, train, airplane) :");
-			string transportation = Console.ReadLine();
+            Console.WriteLine("Do you want to get into a while loop?");
+			string result = Console.ReadLine();
 
-			switch (transportation)
+			// Infinity loop
+			while (result != "no")
 			{
-				case "car":
-                    Console.WriteLine("This is a car");
-                    break;
-
-				case "train":
-					Console.WriteLine("This is a train");
-					break;
-
-				case "airplane":
-					Console.WriteLine("This is an airplane");
-					break;
-
-				default:
-					Console.WriteLine("The value entered does not exist");
-					break;
+				Console.WriteLine("While loop executing...");
 			}
+
+			Random num = new Random();
+            Console.WriteLine(num.Next(0, 100));
         }
 	}
 }
