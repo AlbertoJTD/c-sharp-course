@@ -17,10 +17,18 @@ namespace FirstApp
 					int num = int.Parse(Console.ReadLine());
 					isANumber = true;
 				}
-				catch (Exception e) // general exception
+				//catch (FormatException e)
+				//{
+    //                Console.WriteLine("You have entered text");
+    //            }
+				catch (Exception e) when (e.GetType() != typeof(FormatException)) // general exception excluding FormatException
 				{
                     Console.WriteLine(e.Message);
                 }
+				catch (FormatException e)
+				{
+					Console.WriteLine("You have entered text");
+				}
 			} while (!isANumber);
 		}
 	}
