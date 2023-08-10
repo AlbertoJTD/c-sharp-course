@@ -7,32 +7,20 @@ namespace FirstApp
 	{
 		static void Main(string[] args)
 		{
-			StreamReader file = null;
+			Circle circle = new Circle(); // New Circle object type
 
-			try
-			{
-				string line;
-
-				int count = 0;
-				string path = @"test_file.txt";
-
-				file = new StreamReader(path);
-
-				while ((line = file.ReadLine()) != null) // While there is lines to read
-				{
-					Console.WriteLine(line);
-					count++;
-				}
-			}
-			catch (Exception e)
-			{
-				Console.WriteLine("Error reading file");
-			}
-			finally
-			{
-				if (file != null) file.Close();
-				Console.WriteLine("Closed connection");
-			}
-		}
+			double result = circle.CalculateArea(5);
+            Console.WriteLine(result);
+        }
 	}
+
+	class Circle
+	{
+		const double PI = 3.1416; // Property of Circle class
+
+		public double CalculateArea(int radio) // Method class
+		{
+			return PI * Math.Pow(radio, 2);
+		}
+    }
 }
