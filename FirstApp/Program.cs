@@ -17,9 +17,9 @@ namespace FirstApp
 					int num = int.Parse(Console.ReadLine());
 					isANumber = true;
 				}
-				catch (FormatException e)
+				catch (Exception e) // general exception
 				{
-                    Console.WriteLine("Invalid value, try again");
+                    Console.WriteLine(e.Message);
                 }
 			} while (!isANumber);
 		}
