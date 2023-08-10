@@ -7,12 +7,21 @@ namespace FirstApp
 	{
 		static void Main(string[] args)
 		{
-			int num1 = 10;
+            Console.WriteLine("Type a number: ");
+			bool isANumber = false;
 
 			do
 			{
-                Console.WriteLine("Hello world");
-            } while (num1 < 10);
+				try
+				{
+					int num = int.Parse(Console.ReadLine());
+					isANumber = true;
+				}
+				catch (FormatException e)
+				{
+                    Console.WriteLine("Invalid value, try again");
+                }
+			} while (!isANumber);
 		}
 	}
 }
