@@ -7,49 +7,31 @@ namespace FirstApp
 	{
 		static void Main(string[] args)
 		{
-            Console.WriteLine("Type the number of the month: ");
-			int month = int.Parse(Console.ReadLine());
+			StreamReader file = null;
+
 			try
 			{
-				var result = MonthName(month);
-                Console.WriteLine(result);
-            }
-            catch (ArgumentOutOfRangeException e)
-			{
-                Console.WriteLine($"Error: {e.Message}");
-            }
-		}
+				string line;
 
-		public static string MonthName(int month)
-		{
-			switch (month)
+				int count = 0;
+				string path = @"test_file.txt";
+
+				file = new StreamReader(path);
+
+				while ((line = file.ReadLine()) != null) // While there is lines to read
+				{
+					Console.WriteLine(line);
+					count++;
+				}
+			}
+			catch (Exception e)
 			{
-				case 1:
-					return "January";
-				case 2:
-					return "February";
-				case 3:
-					return "March";
-				case 4:
-					return "April";
-				case 5:
-					return "May";
-				case 6:
-					return "June";
-				case 7:
-					return "July";
-				case 8:
-					return "August";
-				case 9:
-					return "September";
-				case 10:
-					return "October";
-				case 11:
-					return "November";
-				case 12:
-					return "December";
-				default:
-					throw new ArgumentOutOfRangeException(nameof(month), "The month must be between 1-12");
+				Console.WriteLine("Error reading file");
+			}
+			finally
+			{
+				if (file != null) file.Close();
+				Console.WriteLine("Closed connection");
 			}
 		}
 	}
