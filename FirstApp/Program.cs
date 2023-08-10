@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.ConstrainedExecution;
 
 namespace FirstApp
 {
@@ -6,10 +7,27 @@ namespace FirstApp
 	{
 		static void Main(string[] args)
 		{
-            int age = 16;
+            Console.WriteLine("Choose transportation (car, train, airplane) :");
+			string transportation = Console.ReadLine();
 
-			if (age > 15) Console.WriteLine("More than 15 years old");
-			else Console.WriteLine("less than 15");
-		}
+			switch (transportation)
+			{
+				case "car":
+                    Console.WriteLine("This is a car");
+                    break;
+
+				case "train":
+					Console.WriteLine("This is a train");
+					break;
+
+				case "airplane":
+					Console.WriteLine("This is an airplane");
+					break;
+
+				default:
+					Console.WriteLine("The value entered does not exist");
+					break;
+			}
+        }
 	}
 }
