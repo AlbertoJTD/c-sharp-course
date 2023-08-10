@@ -18,7 +18,7 @@ namespace FirstApp
         }
 	}
 
-	class Car
+	partial class Car
 	{
 		// Constructor
 		// Constructor Overloading
@@ -35,7 +35,9 @@ namespace FirstApp
 			this.height = height;
 			this.width = width;
 		}
+	}
 
+	partial class Car {
 		// Properties
 		private int wheels;
 		private double height;
