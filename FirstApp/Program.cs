@@ -12,7 +12,10 @@ namespace FirstApp
 
 			Car car2 = new Car(3000, 1400); // Create a new object using the constructor
 			Console.WriteLine(car2.getInfoCar());
-		}
+
+			car2.setExtraInfo(true, "Red");
+            Console.WriteLine(car2.getExtras());
+        }
 	}
 
 	class Car
@@ -44,6 +47,17 @@ namespace FirstApp
 		public string getInfoCar()
 		{
 			return $"--- Info car ---\nWheels: 4\nHeight: {height}\nWidth: {width}";
+		}
+
+		public void setExtraInfo(bool airconditioner, string color)
+		{
+			this.airConditioner = airconditioner;
+			this.color = color;
+		}
+
+		public string getExtras()
+		{
+			return $"--- Extra info car ---\nAir Conditioner: {airConditioner}\nColor: {color}";
 		}
     }
 }
