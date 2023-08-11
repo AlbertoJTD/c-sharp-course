@@ -11,7 +11,7 @@ namespace FirstApp
 		{
 			// Implicit array
 			var data = new[] {"John", "Wick"};
-			var dat2 = new[] { 15, 20, 90.8, 0.99};
+			var data2 = new[] { 15, 20, 90.8, 0.99};
 
 			// Array of objects
 			Employee Ana = new Employee("Ana", 54);
@@ -26,6 +26,12 @@ namespace FirstApp
 				new {Name = "Wick", Age = 21},
 				new {Name = "Winston", Age = 22},
 			};
+
+
+			for (int i = 0; i < 4; i++)
+			{
+				Console.WriteLine(data2[i]);
+            }
 		}
 	}
 
