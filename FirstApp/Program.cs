@@ -9,72 +9,35 @@ namespace FirstApp
 	{
 		static void Main(string[] args)
 		{
-			// Implicit array
-			var data = new[] {"John", "Wick"};
-			var data2 = new[] { 15, 20, 90.8, 0.99};
+			int[] numbers = new int[4];
+			numbers[0] = 1;
+			numbers[1] = 2;
+			numbers[2] = 4;
+			numbers[3] = 8;
 
-			// Array of objects
-			Employee Ana = new Employee("Ana", 54);
-			Employee[] employees = new Employee[2];
-			employees[0] = new Employee("John", 39);
-			employees[1] = Ana;
+			ProcessData(numbers);
 
-			// Array of anonymous types or classes
-			var data3 = new[]
-			{
-				new {Name ="Juan", Age = 20},
-				new {Name = "Wick", Age = 21},
-				new {Name = "Winston", Age = 22},
-			};
-
-
-			for (int i = 0; i < data2.Length; i++)
-			{
-				Console.WriteLine(data2[i]);
-            }
-
-			for (int i = 0; i < employees.Length; i++)
-			{
-				Console.WriteLine($"Name: {employees[i].getName()}, Age: {employees[i].getAge()}");
-			}
-
-
-            foreach (Employee employee in employees)
-            {
-                Console.WriteLine(employee.getEmployeeInfo());
-            }
-
-            foreach (var item in data3)
-            {
-                Console.WriteLine($"Data: {item.Name}, {item.Age}");
-            }
+			Console.WriteLine("\nAfter modifying the values:: ");
+			PrintData(numbers);
         }
+
+		static void ProcessData(int[] data)
+		{
+            Console.WriteLine("Before modifying values: ");
+            PrintData(data);
+
+			for (int i = 0; i < data.Length; i++)
+			{
+				data[i] += 10;
+			}
+        }
+
+		static void PrintData(int[] data)
+		{
+			foreach (int i in data)
+			{
+				Console.WriteLine(i);
+			}
+		}
 	}
-
-	class Employee
-	{
-		private string name;
-		private int age;
-
-        public Employee(string name, int age)
-        {
-			this.name = name;
-			this.age = age;
-		}
-
-		public string getName()
-		{
-			return this.name;
-		}
-
-		public int getAge()
-		{
-			return this.age;
-		}
-
-		public string getEmployeeInfo()
-		{
-			return $"Name: {name}, Age: {age}";
-		}
-    }
 }
