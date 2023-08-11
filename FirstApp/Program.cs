@@ -8,24 +8,18 @@ namespace FirstApp
 	{
 		static void Main(string[] args)
 		{
-			//CalculateDistance();
+			int[] ages = new int[4];
+			Console.WriteLine(ages[0]);
 
-			var myVariable = new { Name = "Alberth", Age = 20 }; // Anonymous classes
-            Console.WriteLine(myVariable.Name);
+			ages[0] = 1;
+			ages[1] = 2;
+			ages[2] = 3;
+			ages[3] = 4;
 
-			var test = new { Name = "Alberth", Age = "20" };
-		}
+			//int[] numbers = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+			int[] numbers = new int[10] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
-		static void CalculateDistance()
-		{
-			Coordinate pointA = new Coordinate();
-			Coordinate pointB = new Coordinate(150, 90);
-
-			double distance = pointA.DistanceTo(pointB);
-
-            Console.WriteLine($"The distance is: {distance}");
-
-			Console.WriteLine($"Objects created: {Coordinate.getCounterObjects()}");
+			Console.WriteLine(numbers[3]);
         }
 	}
 }
