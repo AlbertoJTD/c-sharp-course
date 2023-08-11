@@ -9,35 +9,30 @@ namespace FirstApp
 	{
 		static void Main(string[] args)
 		{
-			int[] numbers = new int[4];
-			numbers[0] = 1;
-			numbers[1] = 2;
-			numbers[2] = 4;
-			numbers[3] = 8;
+			int[] data = ReadData();
 
-			ProcessData(numbers);
-
-			Console.WriteLine("\nAfter modifying the values:: ");
-			PrintData(numbers);
+            Console.WriteLine("\nThis is your array: ");
+            foreach (var item in data)
+            {
+                Console.WriteLine(item);
+            }
         }
 
-		static void ProcessData(int[] data)
+		static int[] ReadData()
 		{
-            Console.WriteLine("Before modifying values: ");
-            PrintData(data);
+            Console.WriteLine("How many elements do you need in the array?");
+			int numElements = int.Parse(Console.ReadLine());
 
-			for (int i = 0; i < data.Length; i++)
+			int[] numbers = new int[numElements];
+
+            Console.WriteLine("\nType the numbers: ");
+			for (int i = 0; i < numElements; i++)
 			{
-				data[i] += 10;
+                Console.WriteLine($"Numbers [{i}] => ");
+                numbers[i] = int.Parse(Console.ReadLine());
 			}
+
+			return numbers;
         }
-
-		static void PrintData(int[] data)
-		{
-			foreach (int i in data)
-			{
-				Console.WriteLine(i);
-			}
-		}
 	}
 }
