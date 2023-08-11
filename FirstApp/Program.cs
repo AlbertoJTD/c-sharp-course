@@ -28,10 +28,15 @@ namespace FirstApp
 			};
 
 
-			for (int i = 0; i < 4; i++)
+			for (int i = 0; i < data2.Length; i++)
 			{
 				Console.WriteLine(data2[i]);
             }
+
+			for (int i = 0; i < employees.Length; i++)
+			{
+				Console.WriteLine($"Name: {employees[i].getName()}, Age: {employees[i].getAge()}");
+			}
 		}
 	}
 
@@ -44,6 +49,16 @@ namespace FirstApp
         {
 			this.name = name;
 			this.age = age;
+		}
+
+		public string getName()
+		{
+			return this.name;
+		}
+
+		public int getAge()
+		{
+			return this.age;
 		}
     }
 }
