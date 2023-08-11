@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Runtime.ConstrainedExecution;
-using System.Xml.Linq;
-using static System.Math; // import all methods of the Math class
 
 namespace FirstApp
 {
@@ -9,30 +6,48 @@ namespace FirstApp
 	{
 		static void Main(string[] args)
 		{
-			int[] data = ReadData();
+			Horse horse = new Horse();
+			Human human = new Human();
+			Gorilla gorilla = new Gorilla();
 
-            Console.WriteLine("\nThis is your array: ");
-            foreach (var item in data)
-            {
-                Console.WriteLine(item);
-            }
+			gorilla.Climb();
         }
+	}
 
-		static int[] ReadData()
+	class Mammal
+	{
+		public void Breath()
 		{
-            Console.WriteLine("How many elements do you need in the array?");
-			int numElements = int.Parse(Console.ReadLine());
-
-			int[] numbers = new int[numElements];
-
-            Console.WriteLine("\nType the numbers: ");
-			for (int i = 0; i < numElements; i++)
-			{
-                Console.WriteLine($"Numbers [{i}] => ");
-                numbers[i] = int.Parse(Console.ReadLine());
-			}
-
-			return numbers;
+            Console.WriteLine("I can breathe");
         }
+
+		public void Eat()
+		{
+            Console.WriteLine("I am eating");
+        }
+	}
+
+	class Horse : Mammal
+	{
+		public void Gallop()
+		{
+			Console.WriteLine("I am able to gallop...");
+		}
+	}
+
+	class Human : Mammal
+	{
+		public void Think()
+		{
+			Console.WriteLine("I am thinking");
+		}
+	}
+
+	class Gorilla : Mammal
+	{
+		public void Climb()
+		{
+			Console.WriteLine("I am climbing");
+		}
 	}
 }
