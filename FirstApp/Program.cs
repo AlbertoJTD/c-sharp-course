@@ -18,6 +18,8 @@ namespace FirstApp
 			double distance = pointA.DistanceTo(pointB);
 
             Console.WriteLine($"The distance is: {distance}");
+
+			Console.WriteLine($"Objects created: {Coordinate.getCounterObjects()}");
         }
 	}
 }
