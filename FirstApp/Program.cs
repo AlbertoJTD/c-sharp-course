@@ -7,13 +7,17 @@ namespace FirstApp
 	{
 		static void Main(string[] args)
 		{
-            DoSomething();
+			CalculateDistance();
         }
 
-		static void DoSomething()
+		static void CalculateDistance()
 		{
 			Coordinate pointA = new Coordinate();
-			Coordinate pointB = new Coordinate(10, 2);
-		}
+			Coordinate pointB = new Coordinate(150, 90);
+
+			double distance = pointA.DistanceTo(pointB);
+
+            Console.WriteLine($"The distance is: {distance}");
+        }
 	}
 }
