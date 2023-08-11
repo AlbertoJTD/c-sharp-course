@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.ConstrainedExecution;
+using static System.Math; // import all methods of the Math class
 
 namespace FirstApp
 {
@@ -7,8 +8,13 @@ namespace FirstApp
 	{
 		static void Main(string[] args)
 		{
-			CalculateDistance();
-        }
+			//CalculateDistance();
+
+			double squareRoot = Math.Sqrt(9);
+			double pow = Math.Pow(3, 4);
+
+
+		}
 
 		static void CalculateDistance()
 		{
