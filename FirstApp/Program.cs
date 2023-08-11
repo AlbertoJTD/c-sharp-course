@@ -37,7 +37,18 @@ namespace FirstApp
 			{
 				Console.WriteLine($"Name: {employees[i].getName()}, Age: {employees[i].getAge()}");
 			}
-		}
+
+
+            foreach (Employee employee in employees)
+            {
+                Console.WriteLine(employee.getEmployeeInfo());
+            }
+
+            foreach (var item in data3)
+            {
+                Console.WriteLine($"Data: {item.Name}, {item.Age}");
+            }
+        }
 	}
 
 	class Employee
@@ -59,6 +70,11 @@ namespace FirstApp
 		public int getAge()
 		{
 			return this.age;
+		}
+
+		public string getEmployeeInfo()
+		{
+			return $"Name: {name}, Age: {age}";
 		}
     }
 }
