@@ -12,7 +12,9 @@ namespace FirstApp
 
 			var myVariable = new { Name = "Alberth", Age = 20 }; // Anonymous classes
             Console.WriteLine(myVariable.Name);
-        }
+
+			var test = new { Name = "Alberth", Age = "20" };
+		}
 
 		static void CalculateDistance()
 		{
