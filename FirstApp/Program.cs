@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.ConstrainedExecution;
+using System.Xml.Linq;
 using static System.Math; // import all methods of the Math class
 
 namespace FirstApp
@@ -8,18 +9,35 @@ namespace FirstApp
 	{
 		static void Main(string[] args)
 		{
-			int[] ages = new int[4];
-			Console.WriteLine(ages[0]);
+			// Implicit array
+			var data = new[] {"John", "Wick"};
+			var dat2 = new[] { 15, 20, 90.8, 0.99};
 
-			ages[0] = 1;
-			ages[1] = 2;
-			ages[2] = 3;
-			ages[3] = 4;
+			// Array of objects
+			Employee Ana = new Employee("Ana", 54);
+			Employee[] employees = new Employee[2];
+			employees[0] = new Employee("John", 39);
+			employees[1] = Ana;
 
-			//int[] numbers = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-			int[] numbers = new int[10] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-
-			Console.WriteLine(numbers[3]);
-        }
+			// Array of anonymous types or classes
+			var data3 = new[]
+			{
+				new {Name ="Juan", Age = 20},
+				new {Name = "Wick", Age = 21},
+				new {Name = "Winston", Age = 22},
+			};
+		}
 	}
+
+	class Employee
+	{
+		private string name;
+		private int age;
+
+        public Employee(string name, int age)
+        {
+			this.name = name;
+			this.age = age;
+		}
+    }
 }
