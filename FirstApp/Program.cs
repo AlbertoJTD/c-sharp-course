@@ -10,11 +10,9 @@ namespace FirstApp
 		{
 			//CalculateDistance();
 
-			double squareRoot = Math.Sqrt(9);
-			double pow = Math.Pow(3, 4);
-
-
-		}
+			var myVariable = new { Name = "Alberth", Age = 20 }; // Anonymous classes
+            Console.WriteLine(myVariable.Name);
+        }
 
 		static void CalculateDistance()
 		{
