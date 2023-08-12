@@ -32,9 +32,13 @@ namespace FirstApp
 
 			Mammal[] myMammals = new Mammal[3];
 			myMammals[0] = animal;
-			myMammals[0] = person;
-			myMammals[0] = new Gorilla("King kong");
+			myMammals[1] = person;
+			myMammals[2] = new Gorilla("King kong");
 
+			for (int i = 0; i < myMammals.Length; i++)
+			{
+				myMammals[i].Think();
+			}
 		}
 	}
 
@@ -51,6 +55,11 @@ namespace FirstApp
 		{
             Console.WriteLine("I can breathe");
         }
+
+		public virtual void Think()
+		{
+			Console.WriteLine("Just Think");
+		}
 
 		public void Eat()
 		{
@@ -78,9 +87,9 @@ namespace FirstApp
 	{
         public Human(string humanName) : base(humanName) { }
 
-        public void Think()
+        public override void Think()
 		{
-			Console.WriteLine("I am thinking");
+			Console.WriteLine("Overthink");
 		}
 	}
 
@@ -91,6 +100,11 @@ namespace FirstApp
         public void Climb()
 		{
 			Console.WriteLine("I am climbing");
+		}
+
+		public override void Think()
+		{
+			Console.WriteLine("Think like a Gorilla");
 		}
 	}
 }
