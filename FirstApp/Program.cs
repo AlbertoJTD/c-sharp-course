@@ -24,7 +24,12 @@ namespace FirstApp
 
 			Mammal myMammal = new Mammal("");
 			myMammal.Breath();
-		}
+
+			Whale whale = new Whale("Willy");
+			whale.Swim();
+
+            Console.WriteLine($"Horse number paws: {horse.NumberPaws()}"); // Interface method
+        }
 	}
 
 	class Mammal
@@ -57,7 +62,7 @@ namespace FirstApp
 		}
 	}
 
-	class Horse : Mammal
+	class Horse : Mammal, ITerrestrialMammals
 	{
 		// this calls the parent constructor ->  Mammal
 		public Horse(string horseName) : base(horseName) { }
@@ -65,6 +70,11 @@ namespace FirstApp
 		public void Gallop()
 		{
 			Console.WriteLine("I am able to gallop...");
+		}
+
+		public int NumberPaws()
+		{
+			return 4;
 		}
 	}
 
@@ -78,7 +88,7 @@ namespace FirstApp
 		}
 	}
 
-	class Gorilla : Mammal
+	class Gorilla : Mammal, ITerrestrialMammals
 	{
 		public Gorilla(string gorillaName) : base(gorillaName) { }
 
@@ -90,6 +100,11 @@ namespace FirstApp
 		public override void Think()
 		{
 			Console.WriteLine("Think like a Gorilla");
+		}
+
+		public int NumberPaws()
+		{
+			return 2;
 		}
 	}
 
