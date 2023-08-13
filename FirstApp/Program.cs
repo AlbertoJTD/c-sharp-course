@@ -16,6 +16,13 @@ namespace FirstApp
 			car.StartEngine();
 			car.Drive();
 			car.StopEngine();
+
+            Console.WriteLine("\nPolymorphism in action");
+			Vehicle myVehicle = airplane;
+			myVehicle.Drive();
+
+			myVehicle = car;
+			myVehicle.Drive();
 		}
 	}
 
