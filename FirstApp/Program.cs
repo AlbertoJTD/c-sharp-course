@@ -7,6 +7,7 @@ namespace FirstApp
 	{
 		static void Main(string[] args)
 		{
+			/*
 			Horse horse = new Horse("Mustang");
 			ITerrestrialMammals IMyHorse = horse; // substitution principle
 			IJumpWithPaws IMyHorse2 = horse; // substitution principle
@@ -36,21 +37,50 @@ namespace FirstApp
 
 			Console.WriteLine($"Horse number paws: {IMyHorse.NumberPaws()}"); // Interface method
 			Console.WriteLine($"Number of paws used for jumping: {IMyHorse2.NumberPaws()}"); // Interface method
+			*/
+
+			Lizard lizard = new Lizard("Rango");
+			lizard.Breath();
+            Console.WriteLine(lizard.GetName());
+
+            Human human = new Human("John");
+            human.Breath();
+            Console.WriteLine(human.GetName());
 		}
 	}
 
-	class Mammal
+	abstract class Animals
+	{
+		public void Breath()
+		{
+			Console.WriteLine("I can breathe");
+		}
+
+		public abstract string GetName();
+	}
+
+	class Lizard : Animals
+	{
+		private string name;
+
+        public Lizard(string name)
+        {
+            this.name = name;
+        }
+
+        public override string GetName()
+		{
+			return $"Lizard name: {name}";
+		}
+	}
+
+	class Mammal : Animals
 	{
 		private string name;
 
 		public Mammal(string name)
 		{
 			this.name = name;
-		}
-
-		public void Breath()
-		{
-			Console.WriteLine("I can breathe");
 		}
 
 		public virtual void Think()
@@ -63,9 +93,9 @@ namespace FirstApp
 			Console.WriteLine("I am eating");
 		}
 
-		public string getName()
+		public override string GetName()
 		{
-			return name;
+			return $"Mammal name: {name}";
 		}
 	}
 
@@ -139,3 +169,4 @@ namespace FirstApp
 			Console.WriteLine("I am able to swim");
 		}
 	}
+}
