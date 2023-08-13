@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FirstApp
 {
-	interface IJumpPaws
+	interface IJumpWithPaws
 	{
 		int NumberPaws();
 	}

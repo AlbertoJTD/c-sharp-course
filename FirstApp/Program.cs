@@ -6,11 +6,15 @@ namespace FirstApp
 		static void Main(string[] args)
 		{
 			Horse horse = new Horse("Mustang");
+			ITerrestrialMammals IMyHorse = horse; // substitution principle
+			IJumpWithPaws IMyHorse2 = horse; // substitution principle
+
+
 			Human human = new Human("John Wick");
 			Gorilla gorilla = new Gorilla("Joe");
 
-			Mammal animal = new Horse("Horse");
-			Mammal person = new Human("Brayan");
+			Mammal animal = new Horse("Horse"); // substitution principle
+			Mammal person = new Human("Brayan"); // substitution principle
 
 			Mammal[] myMammals = new Mammal[3];
 			myMammals[0] = animal;
@@ -28,8 +32,10 @@ namespace FirstApp
 			Whale whale = new Whale("Willy");
 			whale.Swim();
 
-            Console.WriteLine($"Horse number paws: {horse.NumberPaws()}"); // Interface method
-        }
+            Console.WriteLine($"Horse number paws: {IMyHorse.NumberPaws()}"); // Interface method
+			Console.WriteLine($"Number of paws used for jumping: {IMyHorse2.NumberPaws()}"); // Interface method
+
+		}
 	}
 
 	class Mammal
@@ -62,7 +68,7 @@ namespace FirstApp
 		}
 	}
 
-	class Horse : Mammal, ITerrestrialMammals, IAnimalUsedSports, IJumpPaws
+	class Horse : Mammal, ITerrestrialMammals, IAnimalUsedSports, IJumpWithPaws
 	{
 		// this calls the parent constructor ->  Mammal
 		public Horse(string horseName) : base(horseName) { }
@@ -72,9 +78,14 @@ namespace FirstApp
 			Console.WriteLine("I am able to gallop...");
 		}
 
-		public int NumberPaws()
+		int ITerrestrialMammals.NumberPaws()
 		{
 			return 4;
+		}
+
+		int IJumpWithPaws.NumberPaws()
+		{
+			return 2;
 		}
 
 		public string SportType()
