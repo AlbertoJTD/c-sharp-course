@@ -62,7 +62,7 @@ namespace FirstApp
 		}
 	}
 
-	class Horse : Mammal, ITerrestrialMammals
+	class Horse : Mammal, ITerrestrialMammals, IAnimalUsedSports, IJumpPaws
 	{
 		// this calls the parent constructor ->  Mammal
 		public Horse(string horseName) : base(horseName) { }
@@ -75,6 +75,16 @@ namespace FirstApp
 		public int NumberPaws()
 		{
 			return 4;
+		}
+
+		public string SportType()
+		{
+			return "Equestrian";
+		}
+
+		public bool IsOlimpic()
+		{
+			return true;
 		}
 	}
 
