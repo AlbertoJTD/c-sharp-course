@@ -40,8 +40,9 @@ namespace FirstApp
 			//	myMammals[i].Think();
 			//}
 
-			Mammal mamms = new Mammal("");
-        }
+			Mammal myMammal = new Mammal("");
+			myMammal.Breath(); // myMammal cannot access Breath() method
+		}
 	}
 
 	class Mammal
@@ -53,7 +54,7 @@ namespace FirstApp
 			this.name = name;
         }
 
-        public void Breath()
+        protected void Breath()
 		{
             Console.WriteLine("I can breathe");
         }
