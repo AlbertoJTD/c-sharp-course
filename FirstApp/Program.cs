@@ -27,17 +27,18 @@ namespace FirstApp
 
 	class Employee
 	{
-		private double salary, bonus;
+		private double salary;
+		private Bonus bonus;
 
         public Employee(Bonus employeeBonus, double salary)
         {
-			this.bonus = (double)employeeBonus;
+			this.bonus = employeeBonus;
 			this.salary = salary;
         }
 
 		public double GetSalary()
 		{
-			return salary + bonus;
+			return salary + (double)bonus;
 		}
     }
 
