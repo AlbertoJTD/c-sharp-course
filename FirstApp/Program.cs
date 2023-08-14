@@ -8,17 +8,18 @@ namespace FirstApp
 		static void Main(string[] args)
 		{
 			Employee john = new Employee("John");
-			//john.SetSalary(1000);
-			//Console.WriteLine($"John's salary: {john.GetSalary()}");
+			//john.Set_salary(1000);
+			//Console.WriteLine($"John's _salary: {john.Get_salary()}");
 
 			john.SALARY = 1000;
 			john.SALARY += 200;
-            Console.WriteLine($"John's salary: {john.SALARY}");
+            Console.WriteLine($"John's _salary: {john.SALARY}");
         }
 	}
 
 	class Employee
 	{
+		// Class fields
 		private string name;
 		private double salary;
 
@@ -26,7 +27,7 @@ namespace FirstApp
         /*public double SALARY
 		{
 			get { return this.salary; }
-			set { this.salary = EvaluateSalary(value); }
+			set { this.salary = Evaluatesalary(value); }
 		}*/
 
 		// V2 ->  Expression bodied
