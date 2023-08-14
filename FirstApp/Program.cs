@@ -140,7 +140,7 @@ namespace FirstApp
 		}
 	}
 
-	class Gorilla : Mammal, ITerrestrialMammals
+	sealed class Gorilla : Mammal, ITerrestrialMammals
 	{
 		public Gorilla(string gorillaName) : base(gorillaName) { }
 
@@ -158,6 +158,11 @@ namespace FirstApp
 		{
 			return 2;
 		}
+	}
+
+	class Chimpanzee : Gorilla
+	{
+		public Chimpanzee(string chimpanzeeName) : base(chimpanzeeName) { }
 	}
 
 	class Whale : Mammal
