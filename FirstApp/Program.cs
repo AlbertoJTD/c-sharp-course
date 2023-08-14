@@ -22,13 +22,21 @@ namespace FirstApp
 		private string name;
 		private double salary;
 
-        public double SALARY
+		// V1
+        /*public double SALARY
 		{
 			get { return this.salary; }
 			set { this.salary = EvaluateSalary(value); }
+		}*/
+
+		// V2 ->  Expression bodied
+		public double SALARY
+		{
+			get => this.salary;
+			set => this.salary = EvaluateSalary(value);
 		}
 
-        public Employee(string name)
+		public Employee(string name)
         {
             this.name = name;
         }
