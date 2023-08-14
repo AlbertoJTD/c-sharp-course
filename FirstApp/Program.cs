@@ -134,13 +134,23 @@ namespace FirstApp
 	{
 		public Human(string humanName) : base(humanName) { }
 
-		public override void Think()
+		public sealed override void Think()
 		{
 			Console.WriteLine("Overthink");
 		}
 	}
 
-	sealed class Gorilla : Mammal, ITerrestrialMammals
+	class Teenager : Human
+	{
+		public Teenager(string teenagerName) : base(teenagerName) { }
+
+		public override void Think()
+		{
+            Console.WriteLine("I am a teenager...");
+        }
+	}
+
+	class Gorilla : Mammal, ITerrestrialMammals
 	{
 		public Gorilla(string gorillaName) : base(gorillaName) { }
 
@@ -158,11 +168,6 @@ namespace FirstApp
 		{
 			return 2;
 		}
-	}
-
-	class Chimpanzee : Gorilla
-	{
-		public Chimpanzee(string chimpanzeeName) : base(chimpanzeeName) { }
 	}
 
 	class Whale : Mammal
