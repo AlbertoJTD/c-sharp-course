@@ -140,16 +140,6 @@ namespace FirstApp
 		}
 	}
 
-	class Teenager : Human
-	{
-		public Teenager(string teenagerName) : base(teenagerName) { }
-
-		public override void Think()
-		{
-            Console.WriteLine("I am a teenager...");
-        }
-	}
-
 	class Gorilla : Mammal, ITerrestrialMammals
 	{
 		public Gorilla(string gorillaName) : base(gorillaName) { }
