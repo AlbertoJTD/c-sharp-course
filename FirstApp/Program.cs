@@ -7,33 +7,54 @@ namespace FirstApp
 	{
 		static void Main(string[] args)
 		{
-			Employee employee = new Employee(1200, 250);
-			employee.ModifySalary(employee, 100);
+			/*
+			Seasons seasons = Seasons.Summer;
+			Seasons? allergy = null; // Null variable
+			*/
 
-            Console.WriteLine(employee);
+			/*
+			Bonus John = Bonus.Good;
+            Console.WriteLine(John); // This prints 'Good' -> Gets the enum name
+
+			double bonusJohn = (double)John;
+            Console.WriteLine(bonusJohn); // This prints '300' -> Gets the enum value
+			*/
+
+			Employee John = new Employee(Bonus.Excellent, 800);
+            Console.WriteLine($"John's salary: {John.GetSalary()}");
         }
 	}
 
-	public struct Employee
-	//public class Employee
+	class Employee
 	{
-		public double baseSalary, commission;
+		private double salary, bonus;
 
-        public Employee(int baseSalary, int commission)
+        public Employee(Bonus employeeBonus, double salary)
         {
-			this.baseSalary = baseSalary;
-			this.commission = commission;
+			this.bonus = (double)employeeBonus;
+			this.salary = salary;
         }
 
-		public override string ToString()
+		public double GetSalary()
 		{
-			return string.Format("Sallary and comission for employee ({0}, {1})", this.baseSalary, this.commission);
-		}
-
-		public void ModifySalary(Employee emp, double increase)
-		{
-			emp.baseSalary += increase;
-			emp.commission += increase;
+			return salary + bonus;
 		}
     }
+
+	enum Bonus
+	{
+		Low = 100,
+		Normal = 200,
+		Good = 300,
+		Excellent = 400
+	}
+
+	/*
+	enum Seasons
+	{
+		Spring,
+		Summer,
+		Fall,
+		Winter
+	}*/
 }
