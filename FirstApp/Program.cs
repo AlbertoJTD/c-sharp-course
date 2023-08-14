@@ -7,65 +7,25 @@ namespace FirstApp
 	{
 		static void Main(string[] args)
 		{
-			Employee john = new Employee("John");
-			//john.Set_salary(1000);
-			//Console.WriteLine($"John's _salary: {john.Get_salary()}");
+			Employee employee = new Employee(1200, 250);
 
-			john.SALARY = 1000;
-			john.SALARY += 200;
-            Console.WriteLine($"John's _salary: {john.SALARY}");
+            Console.WriteLine(employee);
         }
 	}
 
 	class Employee
 	{
-		// Class fields
-		private string name;
-		private double salary;
+		public double baseSalary, commission;
 
-		// V1
-        /*public double SALARY
-		{
-			get { return this.salary; }
-			set { this.salary = Evaluatesalary(value); }
-		}*/
-
-		// V2 ->  Expression bodied
-		public double SALARY
-		{
-			get => this.salary;
-			set => this.salary = EvaluateSalary(value);
-		}
-
-		public Employee(string name)
+        public Employee(int baseSalary, int commission)
         {
-            this.name = name;
+			this.baseSalary = baseSalary;
+			this.commission = commission;
         }
 
-		private double EvaluateSalary(double salary)
+		public override string ToString()
 		{
-			if (salary < 0) return 0;
-			else return salary;
+			return string.Format("Sallary and comission for employee ({0}, {1})", this.baseSalary, this.commission);
 		}
-
-		/*
-		public void SetSalary(double salary)
-		{
-			if (salary < 0)
-			{
-                Console.WriteLine("The salary cannot be negative");
-				this.salary = 0;
-            }
-            else
-            {
-				this.salary += salary;
-            }
-        }
-
-		public double GetSalary()
-		{
-			return this.salary;
-		}
-		*/
-	}
+    }
 }
