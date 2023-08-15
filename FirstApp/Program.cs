@@ -7,14 +7,7 @@ namespace FirstApp
 	{
 		static void Main(string[] args)
 		{
-			WarehouseObjects files = new WarehouseObjects(4);
-			/*
-			files.AddElement("John");
-			files.AddElement("Wick");
-			files.AddElement("Jax");
-			files.AddElement("Trevor");
-			string person = (string)files.GetElement(2); // A casting is necessary
-			*/
+			WarehouseObjects<Employee> files = new WarehouseObjects<Employee>(4);
 
 			// ------------------
 			files.AddElement(new Employee(2000));
@@ -22,13 +15,14 @@ namespace FirstApp
 			files.AddElement(new Employee(500));
 			files.AddElement(new Employee(100));
 
-			// Error: System.InvalidCastException
-			// Cannot convert from Employee type to string type
-			// Throws a runtime error
-			//string person = (string)files.GetElement(2);
+			Employee person = files.GetElement(2);
+            Console.WriteLine(person.GetSalary());
 
-			Employee person = (Employee)files.GetElement(2);
-		}
+
+			WarehouseObjects<DateTime> dates = new WarehouseObjects<DateTime>(1);
+			dates.AddElement(new DateTime());
+            Console.WriteLine(dates.GetElement(0));
+        }
 	}
 
 	class WarehouseObjects<T>
