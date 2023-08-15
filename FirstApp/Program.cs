@@ -31,23 +31,23 @@ namespace FirstApp
 		}
 	}
 
-	class WarehouseObjects
+	class WarehouseObjects<T>
 	{
-		private Object[] data;
+		private T[] data;
 		private int counter = 0;
 
         public WarehouseObjects(int numberElements)
         {
-			data = new Object[numberElements];
+			data = new T[numberElements];
         }
 
-		public void AddElement(Object obj)
+		public void AddElement(T obj)
 		{
 			data[counter] = obj;
 			counter++;
 		}
 
-		public Object GetElement(int position)
+		public T GetElement(int position)
 		{
 			return data[position];
 		}
