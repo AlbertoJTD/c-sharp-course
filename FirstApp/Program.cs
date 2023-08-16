@@ -15,20 +15,16 @@ namespace FirstApp
 			p2.Name = "John";
 			p2.Age = 39;*/
 
-			//MathOperations operations = new MathOperations(num => num * num);
-			MathOperations operations = new MathOperations((n1, n2) => n1 + n2);
+			List<int> numbers = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+			List<int> evenNumbers = numbers.FindAll(x => x % 2 == 0);
 
-			Console.WriteLine(operations(3,2));
-        }
-
-		//delegate int MathOperations(int number);
-		delegate int MathOperations(int n1, int n2);
-
-
-		//public static int SquareNumber(int num)
-		//{
-		//	return num * num;
-		//}
+			//foreach (int number in evenNumbers)  Console.WriteLine(number);
+			//evenNumbers.ForEach(num => Console.WriteLine(num));
+			evenNumbers.ForEach(num => {
+                Console.WriteLine($"Hello {num}");
+				Console.WriteLine(num);
+            });
+		}
 	}
 
 	class People
