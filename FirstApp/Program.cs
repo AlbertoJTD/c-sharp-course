@@ -7,24 +7,23 @@ namespace FirstApp
 	{
 		static void Main(string[] args)
 		{
-			/*People p1 = new People();
+			People p1 = new People();
 			p1.Name = "Jonny Cage";
 			p1.Age = 40;
 
 			People p2 = new People();
 			p2.Name = "John";
-			p2.Age = 39;*/
+			p2.Age = 39;
 
-			List<int> numbers = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-			List<int> evenNumbers = numbers.FindAll(x => x % 2 == 0);
+			//ComparePeople compareAge = (ageP1, ageP2) => ageP1 == ageP2;
+			//Console.WriteLine(compareAge(p1.Age, p2.Age));
 
-			//foreach (int number in evenNumbers)  Console.WriteLine(number);
-			//evenNumbers.ForEach(num => Console.WriteLine(num));
-			evenNumbers.ForEach(num => {
-                Console.WriteLine($"Hello {num}");
-				Console.WriteLine(num);
-            });
-		}
+			ComparePeople compareName = (ageP1, ageP2) => ageP1 == ageP2;
+			Console.WriteLine(compareName(p1.Name, p2.Name));
+        }
+
+		//public delegate bool ComparePeople(int ageP1, int ageP2);
+		public delegate bool ComparePeople(string name1, string name2);
 	}
 
 	class People
