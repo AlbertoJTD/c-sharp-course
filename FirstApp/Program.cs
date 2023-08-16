@@ -15,16 +15,20 @@ namespace FirstApp
 			p2.Name = "John";
 			p2.Age = 39;*/
 
-			MathOperations operations = new MathOperations(SquareNumber);
-            Console.WriteLine(operations(3));
+			//MathOperations operations = new MathOperations(num => num * num);
+			MathOperations operations = new MathOperations((n1, n2) => n1 + n2);
+
+			Console.WriteLine(operations(3,2));
         }
 
-		delegate int MathOperations(int number);
+		//delegate int MathOperations(int number);
+		delegate int MathOperations(int n1, int n2);
 
-		public static int SquareNumber(int num)
-		{
-			return num * num;
-		}
+
+		//public static int SquareNumber(int num)
+		//{
+		//	return num * num;
+		//}
 	}
 
 	class People
