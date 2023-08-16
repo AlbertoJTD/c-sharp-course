@@ -7,26 +7,24 @@ namespace FirstApp
 	{
 		static void Main(string[] args)
 		{
-			List<People> people = new List<People>();
-
-			People p1 = new People();
+			/*People p1 = new People();
 			p1.Name = "Jonny Cage";
 			p1.Age = 40;
 
 			People p2 = new People();
 			p2.Name = "John";
-			p2.Age = 39;
+			p2.Age = 39;*/
 
-			people.AddRange(new People[] { p1, p2 });
-
-			Predicate<People> findJohnPredicate = new Predicate<People>(ExistsJohn);
-			bool john = people.Exists(findJohnPredicate);
-
-			if (john) Console.WriteLine("John is on the list");
-			else Console.WriteLine("There is no one named John");
+			MathOperations operations = new MathOperations(SquareNumber);
+            Console.WriteLine(operations(3));
         }
 
-		static bool ExistsJohn(People people) => people.Name == "John";
+		delegate int MathOperations(int number);
+
+		public static int SquareNumber(int num)
+		{
+			return num * num;
+		}
 	}
 
 	class People
