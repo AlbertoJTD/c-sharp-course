@@ -7,22 +7,34 @@ namespace FirstApp
 	{
 		static void Main(string[] args)
 		{
-			List<int> numbers = new List<int>();
-			numbers.AddRange(new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 });
+			List<People> people = new List<People>();
 
-			// Create Predicate
-			Predicate<int> myPredicate = new Predicate<int>(EvenNumber);
+			People p1 = new People();
+			p1.Name = "Jonny Cage";
+			p1.Age = 40;
 
-			// Store all numbers that match the predicate condition
-			List<int> evenNumbers =  numbers.FindAll(myPredicate);
+			People p2 = new People();
+			p2.Name = "John";
+			p2.Age = 39;
 
-			// Print even numbers
-            foreach (int num in evenNumbers)
-            {
-                Console.WriteLine(num);
-            }
+			people.AddRange(new People[] { p1, p2 });
+
+			Predicate<People> findJohnPredicate = new Predicate<People>(ExistsJohn);
+			bool john = people.Exists(findJohnPredicate);
+
+			if (john) Console.WriteLine("John is on the list");
+			else Console.WriteLine("There is no one named John");
         }
 
-		static bool EvenNumber(int number) => number % 2 == 0;
+		static bool ExistsJohn(People people) => people.Name == "John";
 	}
+
+	class People
+	{
+		private string name;
+		private int age;
+
+		public string Name { get => name; set => name = value; }
+		public int Age { get => age; set => age = value; }
+    }
 }
